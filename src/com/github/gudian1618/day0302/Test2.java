@@ -26,6 +26,22 @@ public class Test2 {
         System.out.println(Arrays.toString(r));
         System.out.println(Arrays.toString(b));
 
+//        选择红球
+        int[] red = xuanRed(r);
+//        选择篮球
+        int blue = xuanBlue(b);
+        System.out.println("红球：" + Arrays.toString(r));
+        System.out.println("蓝球：" + b);
+
+    }
+
+    private static int xuanBlue(int[] b) {
+
+
+    }
+
+    private static int[] xuanRed(int[] r) {
+
 
     }
 
