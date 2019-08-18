@@ -42,9 +42,13 @@ public class Test3 {
          * i从头到尾递增，j从尾到头递减
          * j循环开始之前，交换标记flag = false
          * j执行过程中，交换了数据，交换标记flag = true
-         * if(排序结束) {}
+         * j执行过程中，没有交换数据，flag一直保持false
+         * if(！flag/flag == false) {}
          * */
 //        i循环从头到尾递增
+
+        boolean flag = false;
+
         for (int i = 0; i < a.length; i++) {
 //            j循环从后往前递减
 //            j循环的作用，把最小值换到i的位置
@@ -54,12 +58,16 @@ public class Test3 {
 //                    int t = a[j];
 //                    a[j] = a[j - 1];
 //                    a[j - 1] = t;
-//                    第二种方法交换，无需第三方变量，效率高，但是计算类型范围小
+//                    第二种方法交换，无需第三方变量，效率较高，但是计算类型范围小
                     a[j] = a[j] + a[j - 1];
                     a[j - 1] = a[j] - a[j - 1];
                     a[j] = a[j] - a[j - 1];
+                    flag = true;
                 }
             } // j结束
+            if (!flag) {
+                break;
+            }
             System.out.println(Arrays.toString(a));
         }
 
