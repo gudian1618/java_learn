@@ -70,6 +70,3 @@ public class Test2 {
         return b[new Random().nextInt(16)];
     }
 }
-
-
-
