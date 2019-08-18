@@ -29,5 +29,6 @@ public class Test1 {
 //        遍历数组，打印出赋值后的结果
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
-        }    }
+        }
+    }
 }
