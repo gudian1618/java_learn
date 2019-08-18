@@ -66,6 +66,7 @@ public class Test3 {
                 }
             } // j结束
             if (!flag) {
+//                排序完成
                 break;
             }
             System.out.println(Arrays.toString(a));
