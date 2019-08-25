@@ -18,6 +18,6 @@ public class Cat extends Pet {
 
     @Override
     public String cry() {
-        return "猫的哭叫声：喵喵喵";
+        return "猫的哭叫声：喵喵喵~";
     }
 }
