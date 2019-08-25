@@ -36,7 +36,6 @@ public class Pet {
             System.out.println(name + "吃饱了");
             return;
         }
-
         System.out.println("给" + name + "喂食");
         full += 10;
         System.out.println("饱食度：" + full);
@@ -48,7 +47,6 @@ public class Pet {
             System.out.println(name + "饿的玩不动了");
             return;
         }
-
         System.out.println("陪" + name + "玩耍");
         happy += 10;
         full -= 10;
