@@ -23,8 +23,10 @@ public class Test1 {
 
         if (c == 1) {
             Cat cat = new Cat(n);
+            // 向上转型成Pet类型
             f(cat);
         } else if (c == 2) {
+            // 向上转型成Pet类型
             Dog dog = new Dog(n, 20, 90);
             f(dog);
         } else {
@@ -32,39 +34,20 @@ public class Test1 {
         }
     }
 
-    private static void f(Cat cat) {
+    private static void f(Pet pet) {
         System.out.println("按回车执行");
         while (true) {
             new Scanner(System.in).nextLine();
             int r = new Random().nextInt(3);
             switch (r) {
                 case 0:
-                    cat.feed();
+                    pet.feed();
                     break;
                 case 1:
-                    cat.play();
+                    pet.play();
                     break;
                 case 2:
-                    cat.punsih();
-                    break;
-                default:
-            }
-        }
-    }
-
-    private static void f(Dog dog) {
-        while (true) {
-            new Scanner(System.in).nextLine();
-            int r = new Random().nextInt(3);
-            switch (r) {
-                case 0:
-                    dog.feed();
-                    break;
-                case 1:
-                    dog.play();
-                    break;
-                case 2:
-                    dog.punsih();
+                    pet.punsih();
                     break;
                 default:
             }
