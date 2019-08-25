@@ -31,9 +31,12 @@ public class Test1 {
         // 向上转型后，不能调用子类中的特殊成员
         // 只能调用父类中定义的通用成员
 
-        // 向下转型，注意强制类型转换
-        Line line = (Line) shape;
-        line.length();
+        // shape引用的实例，真是类型是Line 
+        if (shape instanceof Line) {
+            // 向下转型，注意强制类型转换，前提是类型匹配，否则不可以
+            Line line = (Line) shape;
+            line.length();
+        }
 
         // shape.length();
         new Scanner(System.in).nextLine();
