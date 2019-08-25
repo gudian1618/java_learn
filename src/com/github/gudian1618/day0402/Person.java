@@ -15,6 +15,7 @@ public class Person {
     int age;
 
     public Person() {
+        System.out.println("Person无惨");
     }
 
     public Person(String name, String gender) {
@@ -25,6 +26,7 @@ public class Person {
         this.name = name;
         this.gender = gender;
         this.age = age;
+        System.out.println("Person全参");
     }
 
     @Override
