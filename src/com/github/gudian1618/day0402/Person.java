@@ -15,7 +15,11 @@ public class Person {
     int age;
 
     public Person() {
-        System.out.println("Person无惨");
+        System.out.println("Person无参");
+    }
+
+    public Person(String name) {
+        this(name, null);
     }
 
     public Person(String name, String gender) {

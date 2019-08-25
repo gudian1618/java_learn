@@ -15,6 +15,7 @@ public class Test2 {
 
         // 先执行父类的无参构造，再执行子类的无参
         new Student();
+        System.out.println("=====================");
         // 先执行父类的无参构造，再执行子类的全参
         new Student("a", "b", 1, "c");
     }

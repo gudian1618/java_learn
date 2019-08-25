@@ -15,12 +15,17 @@ public class Student extends Person {
     String school = null;
 
     public Student() {
-
     }
 
     public Student(String name, String gender, int age, String school) {
 
+//        this.name = name;
+//        this.gender = gender;
+//        this.age = age;
+
+        // 手动调用父类的有参构造，可以简化省略this的重复代码
         super(name, gender, age);
+
         this.school = school;
         System.out.println("Students全参");
     }
