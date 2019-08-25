@@ -57,9 +57,16 @@ public class Pet {
     }
 
     public void punsih() {
-
+        // 不同的代码，就调用方法，在父类中定义，但不用具体写，在子类中重写相关相应的具体方法
+        System.out.println("打" + name + "的pp" +name+ "哭叫：" + cry());
+        happy-=10;
+        System.out.println("快乐度："+happy);
     }
 
+    public String cry() {
+        // 无异议代码，一般为空，不具体写相应的代码，因为压根就不会用
+        return "此处有哭叫声，需要在子类中重写该方法";
+    }
 }
 
 
