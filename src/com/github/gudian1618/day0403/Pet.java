@@ -17,8 +17,8 @@ public class Pet {
     int full;
     int happy;
 
-    public Pet() {
-    }
+//    public Pet() {
+//    }
 
     public Pet(String name) {
         this(name, 50, 50);
