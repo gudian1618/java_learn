@@ -12,4 +12,8 @@ public class Line extends Shape {
     public void deaw() {
         System.out.println("---");
     }
+
+    public void length() {
+        System.out.println("11.2米");
+    }
 }
