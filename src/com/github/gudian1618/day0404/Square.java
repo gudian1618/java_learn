@@ -6,5 +6,10 @@ package com.github.gudian1618.day0404;
  * @date 2019/8/25 3:12 下午
  */
 
-public class Square {
+public class Square extends Shape {
+
+    @Override
+    public void deaw() {
+        System.out.println("口");
+    }
 }
