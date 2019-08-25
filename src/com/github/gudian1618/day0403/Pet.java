@@ -7,7 +7,7 @@ package com.github.gudian1618.day0403;
  * 宠物父类构建共同属性和方法
  */
 
-public class Pet {
+public abstract class Pet {
     /**
      * 宠物名
      * 饱食度
@@ -56,15 +56,16 @@ public class Pet {
 
     public void punsih() {
         // 不同的代码，就调用方法，在父类中定义，但不用具体写，在子类中重写相关相应的具体方法
-        System.out.println("打" + name + "的pp" +name+ "哭叫：" + cry());
-        happy-=10;
-        System.out.println("快乐度："+happy);
+        System.out.println("打" + name + "的pp" + name + "哭叫：" + cry());
+        happy -= 10;
+        System.out.println("快乐度：" + happy);
     }
 
-    public String cry() {
-        // 无异议代码，一般为空，不具体写相应的代码，因为压根就不会用
-        return "此处有哭叫声，需要在子类中重写该方法";
-    }
+    public abstract String cry();
+//    {
+//        // 无异议代码，一般为空，不具体写相应的代码，因为压根就不会用
+//        return "此处有哭叫声，需要在子类中重写该方法";
+//    }
 }
 
 

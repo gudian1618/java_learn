@@ -17,7 +17,9 @@ public class Test1 {
             new Scanner(System.in).nextLine();
             int r = new Random().nextInt(4);
             switch (r) {
-                case 0: f(new Shape());break;
+                case 0:
+                    System.out.println("不能创建抽象类Shape的实例");
+                    break;
                 case 1: f(new Line());break;
                 case 2: f(new Circle());break;
                 case 3: f(new Square());break;
@@ -31,7 +33,7 @@ public class Test1 {
         // 向上转型后，不能调用子类中的特殊成员
         // 只能调用父类中定义的通用成员
 
-        // shape引用的实例，真是类型是Line 
+        // shape引用的实例，真是类型是Line
         if (shape instanceof Line) {
             // 向下转型，注意强制类型转换，前提是类型匹配，否则不可以
             Line line = (Line) shape;
