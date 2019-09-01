@@ -12,6 +12,7 @@ public class Test1 {
 
         String s0 = "abcdefghijklmnopqrstuvwxyz";
         StringBuilder s = new StringBuilder();
+        StringBuffer k = new StringBuffer();
 
         // 系统当前时间的时间点毫秒值
         // 1970-1-1 0点开始的毫秒值
