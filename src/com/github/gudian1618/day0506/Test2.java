@@ -16,6 +16,8 @@ public class Test2 {
         int n = new Scanner(System.in).nextInt();
         String r = f(n);
         System.out.println(r);
+
+
     }
 
     private static String f(int n) {
@@ -28,5 +30,8 @@ public class Test2 {
         BigInteger bi3 = bi1.multiply(bi2);
 
         return bi3.toString();
+
     }
+
 }
+
