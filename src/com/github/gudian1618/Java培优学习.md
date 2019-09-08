@@ -1055,7 +1055,63 @@ New B()
 
 使用implements代替extends关键字
 
+**接口不关心底层实现，只关心隔离实现的接口耦合关系**
+
+**一个类可以同时实现多个接口**
+
+```java
+class A implements X,Y,Z {}
+class A extends B implements X,Y,Z {}
+```
+
+**接口之间的继承是多继承，还使用extends，**
+
+```java
+interface A extends X,Y,Z {}
+```
+
 项目：day0604_变形金刚
 
+## 内部类
 
+在类内部，方法内部，局部嗲马快内部定义的类
 
+- 非静态内部类
+
+    ```java
+    class A {
+        class Inner {
+            // 不能单独存在和创建
+        }    
+    }
+    A a1 = new A();
+    A a2 = new A();
+    A a3 = new A();
+    Inner i = a1.new Inner();
+    ```
+
+    **非静态内部类的实例，必须依赖于外部类的实例才能存在**
+
+    **一个复杂对象，用来封装局部的数据，或封装局部的运算**
+
+- 静态内部类
+
+    ```java
+    class A {
+        static class Inner {
+        }    
+    }
+    Inner i = new Inner();
+    ```
+
+    **静态内部类可以独立创建实例**
+
+    **静态内部类与普通的类没有区别，可以嵌套定义，也可以独立定义，只是一个设计上的选择可能项（可能关系紧密，便于放在一个类中）**
+
+- 局部内部类
+
+    
+
+- 
+
+项目：内部类day0605_内部类

@@ -4,6 +4,7 @@ package com.github.gudian1618.day0604;
  * @author gudian1618
  * @version 1.0
  * @date 2019/9/8 1:44 下午
+ * 接口不关心底层实现，只关心隔离实现的接口耦合关系
  */
 
 public class Transformer {
