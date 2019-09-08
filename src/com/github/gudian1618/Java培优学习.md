@@ -1124,6 +1124,83 @@ interface A extends X,Y,Z {}
     }
     ```
 
-- 
-
 项目：内部类day0605_内部类
+
+## 集合
+
+**存放一组数据的数据结构**
+
+数组的缺点：（相对繁琐，如果频繁的创建，读取和计算再议）
+
+- 长度不可变
+- 访问方式单一
+- 数据插入或删除，操作繁琐（容量和copy位移）
+
+### 集合的继承结构
+
+Collection接口
+
+​	|—List接口
+
+​		|—ArrayList
+
+​		|—LinkedList
+
+​	|—Set接口
+
+​		|—HashSet
+
+​		|—TreeSet
+
+Map接口
+
+​	|—HashMap接口
+
+​	|—TreeMap接口
+
+Iterator接口
+
+Collections集合工具
+
+### LinkedList：环状结构的双向链表
+
+**首尾互相引用节点，一种特殊封装的数据结构，其头尾效率最高一步计算，越往中间计算效率越低。类似于积木和链条，对每个环节可方便操作**
+
+双向链表，首先创建一个双向节点，对数据进行封装，然后会对前后引用相应的节点，没有用null值，最后首尾呼应，形成一个环状结构。
+
+方法：
+
+add（数据）：添加数据
+
+get（i）：访问i位置的数据
+
+remove（i）：删除指定为的数据
+
+remove（数据）：找第一个相等的数据删除，返回值true：找到并删除了数据；false：找不到相同的数据。
+
+iterator（）：迭代器，辅助新建迭代器实例的方法
+
+list.Iterator();
+
+项目：day0606_LinkedList
+
+
+
+ArrayList
+
+HashMap
+
+异常
+
+IO
+
+File
+
+FileInputStream，FileOutputStream
+
+ObjectInputStream，ObjectOutputStream
+
+InputStreamReader，OutputStreamWriter
+
+
+
