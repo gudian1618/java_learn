@@ -1051,5 +1051,11 @@ New B()
 
 3、公开的内部类，内部接口
 
+使用interface代替class关键字
+
+使用implements代替extends关键字
+
+项目：day0604_变形金刚
+
 
 
