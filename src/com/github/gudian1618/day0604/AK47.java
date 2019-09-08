@@ -6,7 +6,7 @@ package com.github.gudian1618.day0604;
  * @date 2019/9/8 1:43 下午
  */
 
-public class AK47 implements Weapon{
+public class AK47 implements Weapon {
 
     @Override
     public void kill() {

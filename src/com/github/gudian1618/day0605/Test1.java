@@ -10,5 +10,22 @@ public class Test1 {
 
     public static void main(String[] args) {
 
+        A.Inner1 i1 = new A.Inner1();
+        System.out.println(i1);
+
+        A a = new A();
+        A.Inner2 i2 = a.new Inner2();
+        System.out.println(i2);
+    }
+}
+
+class A {
+
+    static class Inner1 {
+
+    }
+
+    class Inner2 {
+
     }
 }

@@ -1110,7 +1110,19 @@ interface A extends X,Y,Z {}
 
 - 局部内部类
 
-    
+    实例的地址可以为向外传递，作为父类型传递到外面去
+
+    ```java
+    class A {
+        public Weapon f() {
+        	class Inner implements Weapon {
+            }
+            Inner i = new Inner();
+            // 但是局部内部类可以传递返回该实例的内存地址
+            return i;
+        }
+    }
+    ```
 
 - 
 
