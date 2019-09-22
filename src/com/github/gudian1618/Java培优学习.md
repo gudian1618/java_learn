@@ -1386,7 +1386,7 @@ void f() throws X,Y,Z {
 
 用户名错误：UsernameNotFoundException
 
-密码错误：PasswordWrongException
+密码错误：WrongPasswordException
 
 自定义异常：
 
