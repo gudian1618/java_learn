@@ -1202,5 +1202,29 @@ ObjectInputStream，ObjectOutputStream
 
 InputStreamReader，OutputStreamWriter
 
+### ArrayList
+
+内部用数组存放数据
+
+访问任意位置效率高
+
+增删数据，效率可能会降低
+
+内部是数组初始容量是10
+
+
+
+方法；
+
+add(数据)：添加数据
+
+get（i）：获取i位置的数据
+
+remove（i）：删除第一个相等的数删除
+
+size（）：数据的数量
+
+项目：day0701
+
 
 
