@@ -1182,6 +1182,12 @@ iterator（）：迭代器，辅助新建迭代器实例的方法
 
 list.Iterator();
 
+addFirst（），addLast（）
+
+getFirst(),getLast()
+
+removeFirst(),removeLast()
+
 项目：day0606_LinkedList
 
 
@@ -1206,13 +1212,9 @@ InputStreamReader，OutputStreamWriter
 
 内部用数组存放数据
 
-访问任意位置效率高
-
-增删数据，效率可能会降低
+**访问任意位置效率高，增删数据，效率可能会降低**
 
 内部是数组初始容量是10
-
-
 
 方法；
 
@@ -1226,5 +1228,11 @@ size（）：数据的数量
 
 项目：day0701
 
+ArrayList和LinkedList的选择
 
+**只在两端操作数据，选择LinkedList；**
+
+**数据量小的时候，频繁的增删数据，选择Linkedlist；**
+
+练习：丑数；项目：day0702
 
