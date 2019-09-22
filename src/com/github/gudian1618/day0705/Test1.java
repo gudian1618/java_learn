@@ -14,11 +14,11 @@ public class Test1 {
         String path;
 
         // 存在的文件
-//        path = "/Users/zyd/IdeaProjects/java_learn/src/com/github/gudian1618/day0704/1569081600000.txt";
+        path = "/Users/zyd/IdeaProjects/java_learn/src/com/github /gudian1618/day0704/Test1.java";
         // 存在的文件夹
 //        path = "/Users/zyd/IdeaProjects/java_learn/src/com/github/gudian1618/day0704";
         // 不存在的路径
-        path = "/Users/zyd/IdeaProjects/java_learn/src/com/github/gudian1618/day0710";
+//        path = "/Users/zyd/IdeaProjects/java_learn/src/com/github/gudian1618/day0710";
 
         File f = new File(path);
         System.out.println(f.exists());
