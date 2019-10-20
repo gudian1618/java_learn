@@ -8,7 +8,7 @@ package com.github.gudian1618.day0802;
 
 public class Test4 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 求1000万内的质数数量,从2开始...
         System.out.println("========单线程==========");
         f1();
@@ -17,16 +17,42 @@ public class Test4 {
 
     }
 
-    private static void f1() {
+    private static void f1() throws InterruptedException {
         long t = System.currentTimeMillis();
+
+        // 单线程
+        T1 t1 = new T1(0, 10000000);
+        t1.start();
+
+        //main线程暂停,等待t1线程计算结束再继续执行读取结果
+        t1.join();
+        int n = t1.count;
+
         t = System.currentTimeMillis() - t;
         System.out.println("时间:" + t);
+        System.out.println("质数:" + n);
     }
 
-    private static void f2() {
+    private static void f2() throws InterruptedException {
         long t = System.currentTimeMillis();
+
+        // 5个线程处理
+        T1[] a = new T1[5];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = new T1(i * 2000000, (i + 1) * 2000000);
+            a[i].start();
+        }
+
+        int n = 0;
+        for (T1 t1 : a) {
+            // 等待t1结束后在获得计算结果
+            t1.join();
+            n += t1.count;
+        }
+
         t = System.currentTimeMillis() - t;
         System.out.println("时间:" + t);
+        System.out.println("质数:" + n);
     }
 
     static class T1 extends Thread {
