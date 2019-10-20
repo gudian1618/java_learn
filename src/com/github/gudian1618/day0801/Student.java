@@ -1,12 +1,17 @@
 package com.github.gudian1618.day0801;
 
+import java.io.Serializable;
+
 /**
  * @author gudian1618
  * @version 1.0
  * @date 2019/10/20 11:20 上午
+ * serializable空接口,标识接口,标识一个类,允许被序列化
  */
 
-public class Student {
+public class Student implements Serializable {
+
+    private static final long serialVersionUID = -8813473366352024680L;
 
     private  int id;
     private String name;

@@ -1493,11 +1493,23 @@ BIS与BOS：缓存内存中写入读取文件数据到IO
 
 被序列化的对象，必须实现Serializable接口
 
-方法：writeObject（实例）、readObject（被序列化对象）
+方法：writeObject（实例）、readObject（被序列化对象）(注意强制转成某个类对象而后输出)
 
+序列化版本id：旧版本的数据，不允许恢复成新版本的类型
 
+自己不定义，编译器编译时，会添加默认的版本id，根据类的定义信息，来计算产生一个版本的id。
 
+ISR与OSW：字符编码转换流
 
+unicode统一码：万国码，双字节
+
+java的char类型，使用unicode编码
+
+UTF-8是unicode的传输格式
+
+英文单字节，某些字符双字节，中文三字节，特殊字符四字节
+
+java的unicode字符编码与其他编码的相互转换
 
 
 
