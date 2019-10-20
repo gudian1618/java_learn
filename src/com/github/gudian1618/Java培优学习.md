@@ -1461,9 +1461,37 @@ input /output：输入/输出
 
     [{...},{...},{...}]
 
-    
-
 练习：文件，项目：day0705.Test1
 
 练习：day0705.Test2
+
+FIS、FOS、BIS、BOS、OIS、OOS、ISR、OSW
+
+FIS与FOS：直接与文件相接，读取文件中的数据
+
+- 创建：
+
+new FileOutputStream（文件）：不管文件是否存在在，都新建空文件
+
+new kFileOutputStream(文件，true)：如果文件已经存在，在文件末尾追加数据
+
+- 读写数据的方法：
+
+    write（int b）：int四个字节中，只输出末尾的一个字节值
+
+    write（byte[],from,n）:输出数组中从from开始的n个字节值
+
+    read（）：读取一个字节，补三个0字节，转成int，读取结束后，再读取，返回-1
+
+    read（byte[] buff）：按数组的长度，从文件读取一批字节值，放入数组，返回这一批的字节数量，结束返回-1
+
+
+
+
+
+
+
+
+
+
 
