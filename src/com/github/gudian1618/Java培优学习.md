@@ -1511,7 +1511,7 @@ UTF-8是unicode的传输格式
 
 java的unicode字符编码与其他编码的相互转换
 
-## 进程、线程、协程
+## 进程>线程>协程
 
 进程：在操作系统中，并行执行的任务。
 
@@ -1519,23 +1519,33 @@ java的unicode字符编码与其他编码的相互转换
 
 ### 创建线程（最好用线程池）
 
-#### 继承Thread类
+#### 继承Thread类（相对实现简单）
 
 继承Thread类，定义Thread的子类，在子类中重写run（）方法添加线程中执行的代码。
 
 线程启动后，自动执行run（）方法中的代码
 
-#### 实现Runnable接口（更灵活）
-
 练习：day0802
 
+#### 实现Runnable接口（实现接口的对象，线程与实现代码分离，更灵活）
 
+定义Runnable接口的子类，实现run（）方法
 
+### 线程的常用方法
 
+getName（）、setName（）：获取设置线程名
 
+start（）：启动线程
 
+Thread.currentThread（）：获取当前线程名
 
+Threawd.sleep(毫秒值)：线程暂停指定的毫秒时长
 
+interrupt（）：打断另一个线程的暂停状态，被打断的线程，会出现InterruptedException
+
+setDaemon(true)：把线程设置成后台线程。
+
+虚拟机会在前台线程结束的前后左右，自动退出，不会等待后台线程退出。
 
 
 

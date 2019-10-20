@@ -18,6 +18,8 @@ public class Test1 {
         // 启动线程,会自动执行重写继承后的run()方法
         t1.start();
         t2.start();
+
+        System.out.println("main");
     }
 
     static class T1 extends Thread {
@@ -26,7 +28,7 @@ public class Test1 {
             // 获取线程名
             String n = getName();
             // 打印信息
-            int a = 1000;
+            int a = 5;
             for (int i = 0; i < a; i++) {
                 System.out.println(n + " - " + i);
             }
