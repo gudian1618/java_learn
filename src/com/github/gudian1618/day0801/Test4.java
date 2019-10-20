@@ -1,8 +1,6 @@
 package com.github.gudian1618.day0801;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 /**
@@ -31,23 +29,24 @@ public class Test4 {
 
     private static void copy(String from, String to) throws IOException {
 
-        FileInputStream in = new FileInputStream(from);
-        FileOutputStream out = new FileOutputStream(to);
+        BufferedInputStream in = new BufferedInputStream(new FileInputStream(from));
+        BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(to));
 
-//        // 单字节操作
-//        int b;
-//        while ((b = in.read()) != -1) {
-//            out.write(b);
-//        }
+        // 单字节操作
+        // 基于内存缓存
+        int b;
+        while ((b = in.read()) != -1) {
+            out.write(b);
+        }
 
         // 批量用数组整体操作字节,比单独单字节操作效率高,减少IO操作
-
-        byte[] buff = new byte[8192];
-        // 用来保存每一批的字节数量
-        int n;
-        while ((n = in.read(buff)) != -1) {
-            out.write(n);
-        }
+//
+//        byte[] buff = new byte[8192];
+//        // 用来保存每一批的字节数量
+//        int n;
+//        while ((n = in.read(buff)) != -1) {
+//            out.write(buff, 0, n);
+//        }
 
         in.close();
         out.close();
