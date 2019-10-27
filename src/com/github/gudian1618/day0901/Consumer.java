@@ -19,12 +19,17 @@ public class Consumer extends Thread {
     @Override
     public void run() {
         while (true) {
-            if (list.isEmpty()) {
-                System.out.println(" ");
-                continue;
+            synchronized (list) {
+                while (list.isEmpty()) {
+                    try {
+                        list.wait();
+                    } catch (InterruptedException e) {
+                    }
+                    continue;
+                }
+                Character c = list.removeFirst();
+                System.out.println(">>>>" + c);
             }
-            Character c = list.removeFirst();
-            System.out.println(">>>>" + c);
         }
     }
 }

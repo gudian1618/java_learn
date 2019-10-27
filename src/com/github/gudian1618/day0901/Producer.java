@@ -21,8 +21,12 @@ public class Producer extends Thread {
     public void run() {
         while (true) {
             char c = (char) ('a' + new Random().nextInt(26));
-            list.add(c);
-            System.out.println("<<" + c);
+
+            synchronized (list) {
+                list.add(c);
+                System.out.println("<<" + c);
+                list.notifyAll();
+            }
         }
     }
 }
