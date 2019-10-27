@@ -10,20 +10,35 @@ public class Test1 {
 
     public static void main(String[] args) {
         /*
-        * 线程1 不断循环i++两句,线程2判断i%2==1,是不是奇数
-        * */
+         * 线程1 不断循环i++两句,线程2判断i%2==1,是不是奇数
+         * */
+        R1 r1 = new R1();
+        Thread t1 = new Thread(r1);
+        t1.start();
+
+        R1 r2 = new R1();
+
+        // main线程
+        while (true) {
+            int i = r2.get();
+            if (i % 2 == 1) {
+                System.out.println(i);
+                // 退出虚拟机
+                System.exit(0);
+            }
+        }
 
     }
 
     static class R1 implements Runnable {
         static int i;
 
-        public void add() {
+        public static synchronized void add() {
             i++;
             i++;
         }
 
-        public int get() {
+        public  static synchronized int get() {
             return i;
         }
 
@@ -34,6 +49,5 @@ public class Test1 {
             }
         }
     }
-
 
 }
