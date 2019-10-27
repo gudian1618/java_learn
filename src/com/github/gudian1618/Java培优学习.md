@@ -1635,7 +1635,17 @@ in.read（）：接收数据，对方不发送数据会暂停等待
 
 ### 获得客户端IP地址
 
+```java
+private Socket s;
+private String ip;
 
+public TongXinThread(Socket s) {
+    this.s = s;
+    InetSocketAddress addr = (InetSocketAddress) s.getRemoteSocketAddress();
+    this.ip = addr.getHostString();
+
+}
+```
 
 ### 接收数据的超时时间
 
