@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 /**
  * @author gudian1618
@@ -66,6 +67,8 @@ public class EchoServer {
              *      PrintWriter--------println()
              * */
             try {
+                s.setSoTimeout(3000);
+
                 BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream(),
                     "UTF-8"));
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(s.getOutputStream(),
@@ -78,7 +81,14 @@ public class EchoServer {
                     out.flush();
                 }
                 // null值,循环结束,断开连接
-            } catch (IOException e) {
+            } catch (SocketTimeoutException e) {
+                System.out.println("等待接收数据超时,断开连接");
+                try {
+                    s.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } catch (Exception e) {
                 // readLine()接收数据异常,断开连接
             }
 
