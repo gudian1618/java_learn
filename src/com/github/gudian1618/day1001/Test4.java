@@ -24,7 +24,9 @@ public class Test4 {
         System.out.println(v3);
     }
 
-    /**类型擦除,T是Object类型*/
+    /**
+     * 类型擦除,T是Object类型,会引起类型的写入和读取问题
+     */
     private static void f(Wrapper w) {
         Object v = w.getValue();
         System.out.println(v);
