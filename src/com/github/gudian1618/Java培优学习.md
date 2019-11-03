@@ -1653,13 +1653,39 @@ socket.set
 
 接收数据超时后，会出现超时异常
 
-
-
-反射和注解
-
+## 反射reflect
 
 
 
+- 反射创建实例
+
+- 反射调用成员
+
+
+
+要根据配置文件
+
+### 获得类对象（三种方式）
+
+- 类名.Class
+
+- Class.forNmae（“包名.类名”）
+
+- 实例.getClass（）
+
+### 获得包名、类名
+
+- c.getPackage().getName()：包名
+- C.getName()：类名
+- c.getSimpleNmaae()：简写类名
+
+
+
+
+
+
+
+## 注解
 
 
 
