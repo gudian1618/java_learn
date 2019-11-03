@@ -1734,7 +1734,19 @@ f.set(实例, "fdsafdfds");
 
 Object value = f.get(实例);
 
+### 反射调用方法
 
+// 获取方法
+
+c.getMethod(方法名, 参数列表int.class, String.class);
+
+// 私有方法可以被调用
+
+t.setAccessible(true);
+
+// 执行方法，如果是惊天方法，第一个参数给null值，如果方法是void，等到一个null值
+
+Object returnValue = t.invoke(具体的实例6, “fgasdgfdas”);
 
 
 
