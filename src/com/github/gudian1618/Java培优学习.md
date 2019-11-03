@@ -1716,9 +1716,23 @@ socket.set
 
     Object obj = t.newInstance(12312312, "fdsafsadfasdf");
 
+### 调用成员变量
 
+// 获得title变量
 
+Field f = c.getDeclearedField("title");
 
+// 使私有变量可以被访问
+
+f.setAccessible(true)
+
+// 为变量赋值，如果是静态变量，第一个参数给null值
+
+f.set(实例, "fdsafdfds");
+
+// 访问变量的值，如果是静态变量，参数给null
+
+Object value = f.get(实例);
 
 
 

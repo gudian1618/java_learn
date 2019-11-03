@@ -1,5 +1,6 @@
 package com.github.gudian1618.day1001;
 
+import java.lang.reflect.Constructor;
 import java.util.Scanner;
 
 /**
@@ -21,11 +22,22 @@ public class Test2 {
     }
 
     private static void f1(Class<?> c) {
-
+        try {
+            Object obj = c.newInstance();
+            System.out.println(obj);
+        } catch (Exception e) {
+            System.out.println("不能执行无参构造");
+        }
     }
 
     private static void f2(Class<?> c) {
-
+        try {
+            Constructor<?> t = c.getConstructor(int.class);
+            Object obj = t.newInstance(100);
+            System.out.println(obj);
+        } catch (Exception e) {
+            System.out.println("不能执行int参数构造");
+        }
     }
 
 }
