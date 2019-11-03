@@ -1,5 +1,9 @@
 com.github.gudian1618.day1001.A;a
-com.github.gudian1618.day1001.B;b
+
+
+     com.github.gudian1618.day1001.B;b
+
+
 com.github.gudian1618.day1001.C;c
 
 

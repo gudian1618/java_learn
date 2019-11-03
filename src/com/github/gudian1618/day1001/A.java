@@ -21,4 +21,31 @@ public class A {
     public void A() {
         System.out.println("A.a()");
     }
+
+    @Override
+    public String toString() {
+        return "A{" +
+            "title='" + title + '\'' +
+            '}';
+    }
+
+    @Test(id = 1, title = "测试")
+    public void test1() {
+        System.out.println("test1()");
+    }
+
+    @Test(id = 2)
+    public void test2() {
+        System.out.println("test2()");
+    }
+
+    public void test3() {
+        System.out.println("test3()");
+    }
+
+    @Test("测试4")
+    public void test4() {
+        System.out.println("test4()");
+    }
+
 }
