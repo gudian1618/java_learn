@@ -18,6 +18,7 @@ public class A {
         this.title = title;
     }
 
-
-
+    public void A() {
+        System.out.println("A.a()");
+    }
 }
