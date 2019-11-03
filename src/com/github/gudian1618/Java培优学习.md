@@ -1700,7 +1700,21 @@ socket.set
 - getMethod(方法名，参数类型列表)：
 - getDeclearedMethod(方法名, int.class, String.calss)：
 
+### 反射新建实例
 
+- 执行无参构造
+
+    Object obj = c.newInstance();
+
+- 执行有参构造
+
+    // 获取构造方法
+
+    t = c.getConstructor(int.class, Sting.class);
+
+    // 创建实例时，执行这个构造方法(提供具体的参数)
+
+    Object obj = t.newInstance(12312312, "fdsafsadfasdf");
 
 
 
