@@ -2,6 +2,7 @@ package com.github.gudian1618.day1001;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ import java.util.Scanner;
 
 public class Test1 {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
 
         System.out.println("输入类名:");
         String s = new Scanner(System.in).nextLine();
@@ -27,12 +28,41 @@ public class Test1 {
         f2(c);
         System.out.println("----构造方法-------");
         f3(c);
+        System.out.println("----方法----------");
+        f4(c);
+    }
+
+    private static void f4(Class<?> c) {
+        /*
+         * Method封装一个方法的定义信息,比构造方法多了一个返回类型的信息获取
+         * */
+
+        Method[] a = c.getDeclaredMethods();
+        for (Method t : a) {
+            // 修饰符
+            String m = Modifier.toString(t.getModifiers());
+            // 返回类型
+            String r = t.getReturnType().getSimpleName();
+            // 方法名
+            String n = t.getName();
+            // 参数类型列表
+            Class<?>[] p = t.getParameterTypes();
+            // 异常类型列表
+            Class<?>[] e = t.getExceptionTypes();
+            System.out.print(m + " ");
+            System.out.print(r + " ");
+            System.out.print(n);
+            System.out.print("(" + Arrays.toString(p) + ")");
+            System.out.println("throws" + Arrays.toString(e));
+        }
     }
 
     private static void f3(Class<?> c) {
         /*
          * Constructor封装构造方法的定义信息
+         *
          * */
+
         Constructor<?>[] a = c.getDeclaredConstructors();
         for (Constructor<?> t : a) {
             // 修饰符
@@ -68,7 +98,6 @@ public class Test1 {
             System.out.print(s + " ");
             System.out.print(m + " ");
             System.out.println(w);
-
         }
 
     }
@@ -77,7 +106,5 @@ public class Test1 {
         System.out.println(c.getPackageName());
         System.out.println(c.getName());
         System.out.println(c.getSimpleName());
-
     }
-
 }

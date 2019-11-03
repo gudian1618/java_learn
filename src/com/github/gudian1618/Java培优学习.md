@@ -1691,7 +1691,14 @@ socket.set
 - getConstructrors()：获得所有的公开的构造方法
 - getDeclearedConstructors：获得所有的构造方法，包括私有的
 - getConstructor(参数类型列表)：
-- getDeclearedConstructor(int.class, String.class)：
+- getDeclearedConstructor(int.class, String.class)：指定类型的方法
+
+### 获取方法
+
+- getMethods()：获得公开的方法，包括从父类继承的方法
+- getDeclearMethods()：获得本类定义的方法，包括私有，不包括继承的方法
+- getMethod(方法名，参数类型列表)：
+- getDeclearedMethod(方法名, int.class, String.calss)：
 
 
 
