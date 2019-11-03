@@ -1,5 +1,9 @@
 package com.github.gudian1618.day1001;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -19,6 +23,53 @@ public class Test1 {
 
         System.out.println("----包名|类名------");
         f1(c);
+        System.out.println("----成员变量-------");
+        f2(c);
+        System.out.println("----构造方法-------");
+        f3(c);
+    }
+
+    private static void f3(Class<?> c) {
+        /*
+         * Constructor封装构造方法的定义信息
+         * */
+        Constructor<?>[] a = c.getDeclaredConstructors();
+        for (Constructor<?> t : a) {
+            // 修饰符
+            String m = Modifier.toString(t.getModifiers());
+            // 构造方法名就是类名
+            String n = c.getSimpleName();
+            // 参数类型列表
+            Class<?>[] p = t.getParameterTypes();
+            // 异常列表
+            Class<?>[] e = t.getExceptionTypes();
+
+            System.out.print(m + "");
+            System.out.print(n);
+            System.out.println("(" + Arrays.toString(p) + ")");
+            System.out.println("throws" + Arrays.toString(e));
+        }
+
+    }
+
+    private static void f2(Class<?> c) {
+        /*
+         * Field 用来封装一个变量的定义信息
+         * */
+
+        Field[] a = c.getDeclaredFields();
+        for (Field f : a) {
+            // 修饰符
+            String s = Modifier.toString(f.getModifiers());
+            // 类名
+            String m = f.getType().getSimpleName();
+            // 变量名
+            String w = f.getName();
+            System.out.print(s + " ");
+            System.out.print(m + " ");
+            System.out.println(w);
+
+        }
 
     }
 

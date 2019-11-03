@@ -1663,7 +1663,7 @@ socket.set
 
 
 
-要根据配置文件
+要根据配置文件配置
 
 ### 获得类对象（三种方式）
 
@@ -1678,6 +1678,24 @@ socket.set
 - c.getPackage().getName()：包名
 - C.getName()：类名
 - c.getSimpleNmaae()：简写类名
+
+### 获得成员变量的定义信息
+
+- getFields()：获得所有的公开的成员变量，包括从父类继承的变量
+- getDeclearFields()：获得本类定义的所有的变量，包括私有变量，不包括继承的变量
+- getField(变量名)：获得单个变量的公开和继承
+- getDeclearField(变量名)：获得的单个变量的本类方变量
+
+### 构造方法
+
+- getConstructrors()：获得所有的公开的构造方法
+- getDeclearedConstructors：获得所有的构造方法，包括私有的
+- getConstructor(参数类型列表)：
+- getDeclearedConstructor(int.class, String.class)：
+
+
+
+
 
 
 
