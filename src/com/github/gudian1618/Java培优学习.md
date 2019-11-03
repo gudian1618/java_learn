@@ -1762,9 +1762,11 @@ Object returnValue = t.invoke(具体的实例6, “fgasdgfdas”);
 
 @Test注解：自动发现有@Test注解的方法，并自动运行。                                             
 
+## 泛型（重点）
 
+**泛型是一种类型参数**
 
-
+·
 
 
 

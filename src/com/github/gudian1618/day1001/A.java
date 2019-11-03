@@ -43,7 +43,7 @@ public class A {
         System.out.println("test3()");
     }
 
-    @Test("测试4")
+    @Test(value = "测试4")
     public void test4() {
         System.out.println("test4()");
     }
